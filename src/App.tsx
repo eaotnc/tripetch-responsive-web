@@ -8,7 +8,7 @@ import rugbyMobile from "./assets/rugby-mobile.png";
 import bass from "./assets/bass-desktop.png";
 import bassTablet from "./assets/bass-tablet.png";
 import bassMobile from "./assets/bass-mobile.png";
-import SimpleSlider from "./Components/SimpleSlider/SimpleSlider";
+import AthleteSlider from "./Components/Sliders/AthleteSlider";
 
 function App() {
   const [windowSize, setWindowSize] = useState({
@@ -92,30 +92,9 @@ function App() {
     );
   };
 
-  return (
-    <div className="text-black">
-      {windowSize.width}
-      <div className="content">
-        {renderRugbyImageByScreenSize()}
-        <div className="main-header-right">ATHLETS</div>
-        {windowSize.width < 720 && (
-          <img className="image-left-mobile" src={rugbyMobile} />
-        )}
-        {windowSize.width > 720 ? (
-          renderAthletePcAndTabletContent()
-        ) : (
-          <SimpleSlider />
-        )}
-
-        <div style={{ width: "500px" }}></div>
-      </div>
-
-      <div className="content">
-        {renderBassImageByScreenSize()}
-        <div className="main-header-left">PLAYERS</div>
-        {windowSize.width < 720 && (
-          <img className="image-right-mobile" src={bassMobile} />
-        )}
+  const renderPlayersPcAndTabletContent = () => {
+    return (
+      <>
         <div className="section-left">
           <div className="sub-header">
             <div>
@@ -154,6 +133,39 @@ function App() {
             Save your time, recruit proper athlets for your team.
           </div>
         </div>
+      </>
+    );
+  };
+  return (
+    <div className="text-black">
+      {windowSize.width}
+      <div className="content">
+        {renderRugbyImageByScreenSize()}
+        <div className="main-header-right">ATHLETS</div>
+        {windowSize.width < 720 && (
+          <img className="image-left-mobile" src={rugbyMobile} />
+        )}
+        {windowSize.width > 720 ? (
+          renderAthletePcAndTabletContent()
+        ) : (
+          <AthleteSlider />
+        )}
+
+        <div style={{ width: "500px" }}></div>
+      </div>
+
+      <div className="content">
+        {renderBassImageByScreenSize()}
+        <div className="main-header-left">PLAYERS</div>
+        {windowSize.width < 720 && (
+          <img className="image-right-mobile" src={bassMobile} />
+        )}
+
+        {windowSize.width > 720 ? (
+          renderPlayersPcAndTabletContent()
+        ) : (
+          <AthleteSlider />
+        )}
       </div>
     </div>
   );
