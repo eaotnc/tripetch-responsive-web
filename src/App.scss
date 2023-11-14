@@ -39,7 +39,7 @@
 .image-right-mobile {
   position: absolute;
   left: 9px;
-  top: 75px;
+  top: 95px;
 }
 
 .main-header-right {
@@ -172,5 +172,12 @@
 
   .sub-header {
     font-size: 28px;
+  }
+  .number-text {
+    padding-top: 4px;
+  }
+  .desc {
+    font-size: 15px;
+    line-height: 20px;
   }
 }
