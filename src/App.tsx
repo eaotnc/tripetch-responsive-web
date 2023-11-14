@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import "./App.scss";
-import "./slick.scss";
 import rugby from "./assets/rugby-desktop.png";
 import rugbyTablet from "./assets/rugby-tablet.png";
 import rugbyMobile from "./assets/rugby-mobile.png";
@@ -9,6 +8,7 @@ import rugbyMobile from "./assets/rugby-mobile.png";
 import bass from "./assets/bass-desktop.png";
 import bassTablet from "./assets/bass-tablet.png";
 import bassMobile from "./assets/bass-mobile.png";
+import SimpleSlider from "./Components/SimpleSlider/SimpleSlider";
 
 function App() {
   const [windowSize, setWindowSize] = useState({
@@ -46,7 +46,7 @@ function App() {
     }
   };
 
-  const renderPcAndTabletContentAthlete = () => {
+  const renderAthletePcAndTabletContent = () => {
     return (
       <>
         <div className="section-right">
@@ -91,26 +91,6 @@ function App() {
       </>
     );
   };
-  const renderAtheleteMobileContent = () => {
-    return (
-      <>
-        <div className="section-right second-color">
-          <div className="sub-header">
-            <div>
-              <div className="number-text">02</div>
-              <div className="number-underline" />
-            </div>
-            COLLABORATION
-          </div>
-          <div className="desc">
-            Work with other student athletes to increase visability. When you
-            share and like other players videos it will increase your visability
-            as a player. This is the team work aspect to Surface 1.
-          </div>
-        </div>
-      </>
-    );
-  };
 
   return (
     <div className="text-black">
@@ -121,9 +101,11 @@ function App() {
         {windowSize.width < 720 && (
           <img className="image-left-mobile" src={rugbyMobile} />
         )}
-        {windowSize.width > 720
-          ? renderPcAndTabletContentAthlete()
-          : renderAtheleteMobileContent()}
+        {windowSize.width > 720 ? (
+          renderAthletePcAndTabletContent()
+        ) : (
+          <SimpleSlider />
+        )}
 
         <div style={{ width: "500px" }}></div>
       </div>
