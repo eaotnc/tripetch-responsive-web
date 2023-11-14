@@ -58,8 +58,7 @@ function App() {
   };
 
   return (
-    <div className="text-black">
-      {windowSize.width}
+    <div>
       <div className="content">
         {renderRugbyImageByScreenSize()}
         <div className="main-header-right">ATHLETS</div>
