@@ -43,7 +43,7 @@ function App() {
       windowSize.width >= TABLET_WIDTH &&
       windowSize.width < DESKTOP_WIDTH
     ) {
-      return <img className="image-left-tablet" src={rugbyTablet} />;
+      return <img className="image-left" src={rugbyTablet} />;
     }
   };
   const renderBassImageByScreenSize = () => {
@@ -53,7 +53,7 @@ function App() {
       windowSize.width >= TABLET_WIDTH &&
       windowSize.width < DESKTOP_WIDTH
     ) {
-      return <img className="image-right-tablet" src={bassTablet} />;
+      return <img className="image-right" src={bassTablet} />;
     }
   };
 
@@ -63,7 +63,7 @@ function App() {
         {renderRugbyImageByScreenSize()}
         <div className="main-header-right">ATHLETS</div>
         {windowSize.width < TABLET_WIDTH && (
-          <img className="image-left-mobile" src={rugbyMobile} />
+          <img className="image-left" src={rugbyMobile} />
         )}
         {windowSize.width >= TABLET_WIDTH ? (
           <AthletePcAndTabletContent />
@@ -76,7 +76,7 @@ function App() {
         {renderBassImageByScreenSize()}
         <div className="main-header-left">PLAYERS</div>
         {windowSize.width < TABLET_WIDTH && (
-          <img className="image-right-mobile" src={bassMobile} />
+          <img className="image-right" src={bassMobile} />
         )}
 
         {windowSize.width >= TABLET_WIDTH ? (

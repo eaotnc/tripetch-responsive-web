@@ -20,29 +20,6 @@
   right: 10%;
 }
 
-.image-left-tablet {
-  position: absolute;
-  left: 0;
-  top: 90px;
-}
-
-.image-right-tablet {
-  position: absolute;
-  right: 0;
-}
-
-.image-left-mobile {
-  position: absolute;
-  left: 51px;
-  top: 94px;
-}
-
-.image-right-mobile {
-  position: absolute;
-  left: 2px;
-  top: 95px;
-}
-
 .main-header-right {
   font-size: 90px;
   font-weight: 400;
@@ -143,6 +120,17 @@
   .main-header-right {
     padding-left: 33%;
   }
+
+  .image-left {
+    position: absolute;
+    left: 0;
+    top: 90px;
+  }
+
+  .image-right {
+    position: absolute;
+    right: 0;
+  }
 }
 
 /* Styles for screens mobile up to 767px */
@@ -180,5 +168,17 @@
   .desc {
     font-size: 15px;
     line-height: 20px;
+  }
+
+  .image-left {
+    position: absolute;
+    left: 51px;
+    top: 94px;
+  }
+
+  .image-right {
+    position: absolute;
+    left: 2px;
+    top: 95px;
   }
 }
