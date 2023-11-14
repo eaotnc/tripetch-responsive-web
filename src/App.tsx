@@ -12,7 +12,7 @@ import AthleteSlider from "./Components/Sliders/AthleteSlider";
 import { AthletePcAndTabletContent } from "./Components/AthletePcAndTabletContent";
 import PlayersPcAndTabletContent from "./Components/PlayersPcAndTabletContent";
 
-const MOBILE_WIDTH = 768;
+const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1920;
 
 function App() {
@@ -40,8 +40,8 @@ function App() {
     if (windowSize.width >= DESKTOP_WIDTH) {
       return <img className="image-left" src={rugby} />;
     } else if (
-      windowSize.width >= MOBILE_WIDTH &&
-      windowSize.width <= DESKTOP_WIDTH
+      windowSize.width >= TABLET_WIDTH &&
+      windowSize.width < DESKTOP_WIDTH
     ) {
       return <img className="image-left-tablet" src={rugbyTablet} />;
     }
@@ -50,8 +50,8 @@ function App() {
     if (windowSize.width >= DESKTOP_WIDTH) {
       return <img className="image-right" src={bass} />;
     } else if (
-      windowSize.width >= MOBILE_WIDTH &&
-      windowSize.width <= DESKTOP_WIDTH
+      windowSize.width >= TABLET_WIDTH &&
+      windowSize.width < DESKTOP_WIDTH
     ) {
       return <img className="image-right-tablet" src={bassTablet} />;
     }
@@ -62,26 +62,24 @@ function App() {
       <div className="content">
         {renderRugbyImageByScreenSize()}
         <div className="main-header-right">ATHLETS</div>
-        {windowSize.width < MOBILE_WIDTH && (
+        {windowSize.width < TABLET_WIDTH && (
           <img className="image-left-mobile" src={rugbyMobile} />
         )}
-        {windowSize.width > MOBILE_WIDTH ? (
+        {windowSize.width >= TABLET_WIDTH ? (
           <AthletePcAndTabletContent />
         ) : (
           <AthleteSlider />
         )}
-
-        <div style={{ width: "500px" }}></div>
       </div>
 
       <div className="content">
         {renderBassImageByScreenSize()}
         <div className="main-header-left">PLAYERS</div>
-        {windowSize.width < MOBILE_WIDTH && (
+        {windowSize.width < TABLET_WIDTH && (
           <img className="image-right-mobile" src={bassMobile} />
         )}
 
-        {windowSize.width > MOBILE_WIDTH ? (
+        {windowSize.width >= TABLET_WIDTH ? (
           <PlayersPcAndTabletContent />
         ) : (
           <AthleteSlider />
