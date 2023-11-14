@@ -1,6 +1,6 @@
 # tripetch-responsive-web
 
-this is the website for test tripect frontend developer role
+this is the website for test tripecth frontend developer role
 
 using react with vite
 
@@ -8,3 +8,7 @@ using react with vite
 
 ` yarn install`
 ` yarn dev`
+
+## online DEMO
+
+[https://eaotnc.github.io/tripetch-responsive-web/](https://eaotnc.github.io/tripetch-responsive-web/)
