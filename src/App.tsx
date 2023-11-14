@@ -1,10 +1,58 @@
+import { useEffect, useState } from "react";
 import "./App.scss";
+import rugby from "./assets/rugby-desktop.png";
+import rugbyTablet from "./assets/rugby-tablet.png";
+import rugbyMobile from "./assets/rugby-mobile.png";
+
+import bass from "./assets/bass-desktop.png";
+import bassTablet from "./assets/bass-tablet.png";
+import bassMobile from "./assets/bass-mobile.png";
 
 function App() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const handleResize = () => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const renderRugbyImageByScreenSize = () => {
+    if (windowSize.width >= 1920) {
+      return <img className="image-left" src={rugby} />;
+    } else if (windowSize.width > 720 && windowSize.width <= 1920) {
+      return <img className="image-left-tablet" src={rugbyTablet} />;
+    }
+  };
+  const renderBassImageByScreenSize = () => {
+    if (windowSize.width >= 1920) {
+      return <img className="image-right" src={bass} />;
+    } else if (windowSize.width > 720 && windowSize.width <= 1920) {
+      return <img className="image-right-tablet" src={bassTablet} />;
+    } else {
+      // return <img className="image-right-mobile" src={bassMobile} />;
+    }
+  };
   return (
     <div>
       <div className="content">
+        {renderRugbyImageByScreenSize()}
         <div className="main-header-right">ATHLETS</div>
+        {windowSize.width && (
+          <img className="image-left-mobile" src={rugbyMobile} />
+        )}
         <div className="section-right">
           <div className="sub-header">
             <div>
@@ -47,7 +95,11 @@ function App() {
       </div>
 
       <div className="content">
+        {renderBassImageByScreenSize()}
         <div className="main-header-left">PLAYERS</div>
+        {windowSize.width && (
+          <img className="image-right-mobile" src={bassMobile} />
+        )}
         <div className="section-left">
           <div className="sub-header">
             <div>
