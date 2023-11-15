@@ -30,7 +30,7 @@ export const PlayersPcAndTabletContent = () => {
       <div className="section-left bg-black">
         <div className="sub-header">
           <div>
-            <div className="number-text text-white">03</div>
+            <div className="number-text text-third">03</div>
             <div className="number-underline white" />
           </div>
           GROWTH
