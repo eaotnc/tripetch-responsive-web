@@ -31,7 +31,7 @@ export const PlayersPcAndTabletContent = () => {
         <div className="sub-header">
           <div>
             <div className="number-text text-white">03</div>
-            <div className="number-underline " />
+            <div className="number-underline white" />
           </div>
           GROWTH
         </div>
