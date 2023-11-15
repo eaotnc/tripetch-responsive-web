@@ -47,7 +47,7 @@ export default class AthleteSlider extends Component {
             <div className="sub-header">
               <div>
                 <div className="number-text">03</div>
-                <div className="number-underline white" />
+                <div className="number-underline" />
               </div>
               GROWTH
             </div>

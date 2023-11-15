@@ -35,7 +35,7 @@ export const AthletePcAndTabletContent = () => {
           </div>
           GROWTH
         </div>
-        <div className="desc">
+        <div className="desc text-white">
           Resources and tools for you to get better as a student Athelte. Access
           to training classes, tutor sessions, etc
         </div>
