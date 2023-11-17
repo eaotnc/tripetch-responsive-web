@@ -12,3 +12,6 @@ using react with vite
 ## online DEMO
 
 [https://eaotnc.github.io/tripetch-responsive-web/](https://eaotnc.github.io/tripetch-responsive-web/)
+
+
+https://www.figma.com/file/Fu4S5oafdEHbF1c3RZGqcm/frontend-responsive?type=design&node-id=0-1&mode=design
